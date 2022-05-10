@@ -1,0 +1,16 @@
+{% for entry4 in entry3.children %}
+  {% if entry4.permalink %}
+  
+    {% assign class4 = 'navlink' %}
+
+    <li class="nav-item">
+      <a class="{{class4}}" data-toggle="collapse" role="button" href="{{entry4.permalink}}"
+        {%- if entry4.permalink contains '://' %} target="_blank" rel="noopener" {%- endif -%}
+      >
+        {{entry4.title}}
+      </a>
+    </li>
+
+  {% endif %}
+
+{% endfor %}

@@ -1,0 +1,38 @@
+{% comment %} Canonicalize page URL path {% endcomment %}
+{% assign page_url_path = page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' %}
+
+{% assign active_entries = include.nav | active_nav_entry_index_array: page_url_path %}
+
+<ul class="nav flex-column">
+  {% for entry1 in include.nav %}
+    {% assign class1 = '' %}
+    
+    {% if entry1.children %}
+      {% assign id1 = 'sidenav-' | append: forloop.index %}
+    
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" role="button" href="#{{id1}}"
+          aria-expanded="false" aria-controls="collapseExample"
+        >
+          {{entry1.title}}
+        </a>
+
+        <div class="collapse" id="{{id1}}">
+          <ul class="nav flex-column flex-nowrap">
+            {% include sidenav-level-2.html %}
+          </ul>
+        </div>
+      </li>
+
+    {% elsif entry1.permalink %}
+
+      <li class="nav-item">
+        <a class="nav-link no-children" role="button" href="{{entry1.permalink}}">
+          {{entry1.title}}
+        </a>
+      </li>
+
+    {% endif %}
+
+  {% endfor %}
+</ul>

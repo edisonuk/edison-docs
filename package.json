@@ -1,0 +1,12 @@
+{
+  "name": "edison-docs",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edisonuk/edison-docs.git"
+  },
+  "dependencies": {
+    "bootstrap-scss": "^4.6.1"
+  }
+}

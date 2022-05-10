@@ -1,0 +1,12 @@
+code {
+  direction: ltr;
+}
+
+// Inline code
+:not(a):not(pre)>code {
+  word-wrap: break;
+  color: $site-color-black;
+  background-color: $site-color-inline-code;
+  border-radius: 2px;
+  padding: .1em .2em
+}

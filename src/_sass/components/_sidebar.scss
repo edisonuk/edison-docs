@@ -1,0 +1,57 @@
+.site-sidebar {
+  padding: $site-sidebar-padding-y $site-sidebar-padding-x;
+  font-size: $font-size-sm;
+
+  top: 57px;
+
+  .nav {
+    justify-content: center;
+
+    ::-webkit-scrollbar-track {
+      background: 0;
+    }
+  }
+
+  .nav-link {
+    padding: bs-spacer(2) 0;
+    position: relative;
+    color: inherit;
+    &.disabled { opacity: 0.5; }
+  }
+
+  @mixin collapsable() {
+    align-items: center;
+    display: flex;
+
+    &::before {
+      border-style: solid;
+      border-width: 1px 1px 0px 0px;
+      display: inline-block;
+      content: "";
+      padding: 2px;
+      transform: rotate(45deg);
+      transition: transform .25s ease-in-out;
+      margin-right: bs-spacer(3);
+    }
+
+    &:not(.collapsed) {
+      &::before {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  > .nav > .nav-item {
+    > .nav-link {
+      &:not(.no-children) {
+        @include collapsable()
+      }
+    }
+  }
+
+  scrollbar-base-color: transparent;
+
+  > .nav .nav {
+    padding-left: bs-spacer(5);
+  }
+}

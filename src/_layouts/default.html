@@ -1,0 +1,50 @@
+---
+layout: base
+---
+
+<div class="container-fluid position-relative">
+  <div class="row flex-xl-nowrap">
+    <div class="fixed-col site-sidebar col-12 col-md-3 col-xl-2 d-none d-md-block" data-fixed-column>
+      {% include sidenav-level-1.html nav=site.data.sidenav %}
+    </div>
+
+    {% if page.contents != false %}
+      {% include contents.html kind="side" %}
+    {% endif %}
+
+    <main class="site-content col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2">
+      <div class="container">
+        <header class="site-content__title">
+          {% if page.show_breadcrumb %}
+            {% include breadcrumbs.html %}
+          {% endif %}
+          
+          <h1>{{ page.title }}</h1>
+
+          {% assign metadata = page.metadata %}
+          {% if metadata %}
+            <div class="row justify-content-start page-metadata">
+              {% if metadata.date %}
+                <div class="col-auto">{{ metadata.date }}</div>
+                <div class="col-auto mtd-dot">•</div>
+              {% endif %}
+
+              {% if metadata.read_time %}
+                <div class="col-auto">{{ metadata.read_time }} read</div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+        </header>
+
+        {% if page.contents %}
+          {% include conents.html kind="inline" %}
+        {% endif %}
+
+        {{ content | inject_anchors }}
+
+      </div>
+    </main>
+
+  </div>
+</div>

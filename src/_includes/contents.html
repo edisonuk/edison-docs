@@ -1,0 +1,8 @@
+{% if contents contains "<li" %}
+  <div class="site-toc site-toc-{{include.kind}} {{include.class}}">
+    <header class="site-toc__title">
+        {{ include.header | default: 'On this page' }}
+    </header>
+    {{ contents }}
+</div>
+{% endif %}

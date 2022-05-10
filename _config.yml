@@ -1,0 +1,17 @@
+title: Edison Docs
+
+###### Jekyll ######
+
+source: src
+permalink: pretty
+
+sass:
+  sass_dir: _sass
+  cache: false
+  style: compressed
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: 'default'

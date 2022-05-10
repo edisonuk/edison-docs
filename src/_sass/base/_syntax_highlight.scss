@@ -1,0 +1,132 @@
+.highlight table td { padding: 5px; }
+
+.highlight table pre { margin: 0; }
+
+.highlight, .highlight .w {
+  color: #586e75;
+}
+
+.highlight .err {
+  color: #002b36;
+
+  // error squiggles
+  background-image:
+    linear-gradient(45deg, transparent 65%, red 80%, transparent 90%),
+    linear-gradient(135deg, transparent 5%, red 15%, transparent 25%),
+    linear-gradient(135deg, transparent 45%, red 55%, transparent 65%),
+    linear-gradient(45deg, transparent 25%, red 35%, transparent 50%);
+
+  background-repeat:repeat-x;
+  background-size: 14px 4px;
+  background-position:0 95%;
+}
+
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #008000;
+}
+
+.highlight .cp {
+  color: #b58900;
+}
+
+.highlight .nt {
+  color: #ad00a5;
+}
+
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+
+.highlight .gi {
+  color: #859900;
+}
+
+.highlight .gd {
+  color: #dc322f;
+}
+
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ad00a5;
+}
+
+.highlight .kc {
+  color: #cb4b16;
+}
+
+.highlight .kt {
+  color: #cb4b16;
+}
+
+.highlight .kd {
+  color: #d38900;
+}
+
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #0101fd;
+}
+
+.highlight .sa {
+  color: #6c71c4;
+}
+
+.highlight .sr {
+  color: #2aa198;
+}
+
+.highlight .si {
+  color: #d33682;
+}
+
+.highlight .se {
+  color: #d33682;
+}
+
+.highlight .nn {
+  color: #b58900;
+}
+
+.highlight .nc {
+  color: #b58900;
+}
+
+.highlight .no {
+  color: #b58900;
+}
+
+.highlight .na {
+  color: #cf8000;
+}
+
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+
+.highlight .ss {
+  color: #859900;
+}
+
+.highlight .nf {
+  color: #990000;
+}
+
+.highlight .ne {
+  color: #990000;
+}
+
+.highlight .nb {
+  color: #0086B3;
+}
+
+.highlight .nv {
+  color: #008080;
+}

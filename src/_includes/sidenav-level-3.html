@@ -1,0 +1,40 @@
+{% for entry3 in entry2.children %}
+  {% assign class3 = 'nav-link' %}
+
+  {% if entry3 == 'divider' %}
+    
+    <div class="dropdown-divider"></div>
+    
+  {% elsif entry3.chidren == nil and entry3.permalink %}
+
+    <li class="nav-item">
+      <a class="{{class3}}" {%- unless entry3.permalink %} disabled {%- endunless %}
+        data-toggle="collapse" role="button">
+        {{entry3.title}}
+      </a>
+    </li>
+  
+  {% elsif entry3.chidren %}
+    {% assign class3 = class3 | append: ' collapsable' %}
+
+    {% assign href = entry3.permalink %}
+    {% unless href %}
+      {% assign href = '#' %}
+    {% endunless %}
+  
+    <li class="nav-item">
+      <a class="{{class3}}" data-toggle="collapse" role="button"
+        href="{{href}}" role="button">
+        {{entry3.title}}
+      </a>
+
+      <ul class="">
+        <ul class="nav flex-column collapse">
+          {% include sidenav-level-4.html %}
+        </ul>
+      </ul>
+    </li>
+  
+  {% endif %}
+
+{% endfor %}
